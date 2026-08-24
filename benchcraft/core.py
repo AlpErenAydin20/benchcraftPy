@@ -3,8 +3,11 @@ import tracemalloc
 from functools import wraps
 from .utils import format_bytes
 
-def BenchCraft(unit = "s"):
-
+def BenchCraft(unit: str = "s")-> callable:
+    """
+    A decorator that measures the execution time and peak memory usage of functions.\n
+    :param unit: Time unit ("s" second , "ms" millisecond , default: "s")
+    """
     def benchcraft(func):
 
         @wraps(func)

@@ -1,4 +1,7 @@
-def format_bytes(bytes_count):
+def format_bytes(bytes_count: int)->str:
+    """
+    Converts the byte amount into a human-readable format (B, KB, MB).
+    """
     if bytes_count > 1024*1024:
         mb_format = bytes_count / (1024*1024)
         return f"{mb_format:.2f} MB"
