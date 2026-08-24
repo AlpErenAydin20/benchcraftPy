@@ -1,6 +1,7 @@
 import time
 import tracemalloc
 from functools import wraps
+from .utils import format_bytes
 
 def BenchCraft(unit = "s"):
 
@@ -24,7 +25,7 @@ def BenchCraft(unit = "s"):
                 display_time = elapsed_time *1000 if unit =="ms" else elapsed_time
                 unit_label = "ms" if unit =="ms" else "s"
             
-                print(f"[{func.__name__}] Run Time: {display_time:.6f} {unit_label} | Memory: {byte_peak} B")
+                print(f"[{func.__name__}] Run Time: {display_time:.6f} {unit_label} | Memory: {format_bytes(byte_peak)}")
 
         return wrapper
     return benchcraft
