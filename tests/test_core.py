@@ -5,8 +5,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import pytest
 import time
-from benchcraft.core import BenchCraft
-from benchcraft.utils import format_bytes
+from benchcraftPy.core import BenchCraft
+from benchcraftPy.utils import format_bytes
 
 # format_bytes fonksiyonu doğru dönüşümleri yapıyor mu?
 def test_format_bytes():
